@@ -1,0 +1,177 @@
+/* Colors to use 
+
+h1, 46px
+body , 16px
+h2 22px
+colors............
+primary : #D7FE03
+SECOND : #83AF3B
+TRANS : #F5F5F8
+*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+
+}
+:root {
+  --primary: #0066cc;
+  --secondary: #3399ff;
+  --darkgreen: #33cc33;
+  --lightgreen: #99ff99;
+  --trans: #f5f5f8;
+  --gredient: linear-gradient(to right, #0066cc, #3399ff);
+  --gredient2: linear-gradient(to right, #33cc33, #146b14);
+  
+}
+/* the header styling section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+.logo img {
+  height: 100px;
+  cursor: pointer;
+}
+.icon {
+  height: 28px;
+  cursor: pointer;
+}
+.header-container {
+  width: 100%;
+
+  height: 90px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+}
+
+.notis {
+  position: relative;
+}
+.notis-num {
+  position: absolute;
+  top: -5px;
+  left: 80%;
+  background-color: red;
+  font-weight: 700;
+  border-radius: 50%;
+  padding: 0.1rem 0.2rem;
+  font-size: 0.8rem;
+  color: var(--trans);
+}
+
+/* main sectiion design */
+
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  background-color: var(--trans);
+}
+.main{
+    background-color: var(--trans);
+}
+
+/*  section1 greetings sectiion design */
+.greetings {
+  padding-block: 1rem;
+}
+.greeting {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #333;
+}
+.userName {
+    background: var(--gredient);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+
+}
+/*  section2  sectiion design */
+
+.section2{
+    margin-block: 1rem;
+    padding-block: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    background-color: white;
+    padding: 0.8rem;
+    border-radius: 0.4rem; */
+  
+   
+}
+.icons-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.icons .icon{
+    stroke: rgba(10, 2, 128, 0.897);
+   
+}
+.icons{
+    padding: 0.8rem;
+ 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+   border: 1px solid var(--darkgreen);
+    border-radius: 0.4rem;
+    transition: all 0.4s linear;
+   
+}
+.icons:hover{
+    background-color: var(--lightgreen);
+}
+.icons:hover
+.icon-text
+
+{
+    background: transparent;
+
+  
+}
+.icon-text:hover{
+    color: #333;
+}
+.icon-text{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #000;
+    transition: all 0.4s linear;
+}
+.balance-wrapper{
+   
+    padding: 2rem;
+
+    font-size: 2rem;
+    font-weight: 600;
+    border-radius: 0.4rem;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 0px 8px;
+    border: 1px solid var(--trans);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+ 
+}
+.balance{
+   background: var(--gredient);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 800;
+
+}
+.balance-text{
+color: #333;
+font-size: 1.8rem;
+}
+
