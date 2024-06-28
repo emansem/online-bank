@@ -111,7 +111,7 @@
 
 					<div class="balance-wrapper">
 						<p class="balance-text">Balance:</p>
-						<p class="balance">$70000</p>
+						<p class="balance">$0</p>
 					</div>
 				</section>
 
@@ -119,78 +119,36 @@
 				<section class="section3">
 					<div class="transaction">
 						<h2 class="trans-heading">The list of your Transactions</h2>
-						<ul class="transaction-items">
-							<li class="transactions-list">
-								<span id="addedAmount" class="amount-desc"> Deposit</span>
-								<span class="text-desc"
-									>Lorem ipsum dolor sit, amet consectetur
-								</span>
-								<span id="addedBalance" class="amount">3000CFA</span>
-							</li>
-							<li class="transactions-list">
-								<span id="minusText" class="amount-desc"> Withdrawal</span>
-								<span class="text-desc"
-									>Lorem ipsum dolor sit, amet consectetur
-								</span>
-								<span id="minusAmount" class="amount">10000CFA</span>
-							</li>
-							<li class="transactions-list">
-								<span id="addedAmount" class="amount-desc"> Approved Loan</span>
-								<span class="text-desc"
-									>Lorem ipsum dolor sit, amet consectetur
-								</span>
-								<span id="addedBalance" class="amount">3000CFA</span>
-							</li>
-							<li class="transactions-list">
-								<span id="minusText" class="amount-desc"> Transfer</span>
-								<span class="text-desc"
-									>Lorem ipsum dolor sit, amet consectetur
-								</span>
-								<span id="minusAmount" class="amount">13000CFA</span>
-							</li>
-						</ul>
-						<p class="status">No Transactions Found</p>
+						<ul class="transaction-items"></ul>
             <!------ THE balance   SECTION----------------->
-            <div class="balances">
-              <div class="balance-item">
-                <span class="balance__item--text"> Deposits:</span>
-                <span class="balance__item--amount balance-deposit">$5666</span>
-              </div>
-              <div class="balance-item">
-                <span class="balance__item--text"> Withdrawals:</span>
-                <span class="balance__item--amount balance-withdrawal  ">$4567</span>
-              </div>
-              <div class="balance-item">
-                <span class="balance__item--text"> Loans:</span>
-                <span class="balance__item--amount">$5666</span>
-              </div>
-              <div class="balance-item">
-                <span class="balance__item--text"> Transfers:</span>
-                <span class="balance__item--amount">$5666</span>
-              </div>
+           <div class="balances"> 
+              
             </div>
 					</div>
 
 					<!------ THE Form  SECTION----------------->
 
 					<div class="form-wrapper">
-						<div class="forms-item deposits">
-							<div class="form-heading">Fill the form to make a deposit</div>
-							<div>
-								<label for="deposit">Enter Deposit Amount</label>
-								<input
-									type="text"
-									class="amount-input"
-									placeholder="Enter amount"
-									required
-								/>
+						<form action="">
+							<div class="forms-item deposits">
+								<div class="form-heading">Fill the form to make a deposit</div>
+								<div>
+									<label for="deposit">Enter Deposit Amount</label>
+									<input
+									name="deposit-btn"
+										type="text"
+										class="amount-input deposit-input"
+										placeholder="Enter amount"
+										required
+									/>
+								</div>
+								<div>
+									<label for="reasons">Reasons for Deposit</label>
+									<textarea name="reasons" id="reasons"></textarea>
+								</div>
+								<button class="submit deposit-btn">Deposit Now</button>
 							</div>
-							<div>
-								<label for="reasons">Reasons for Withdrawal</label>
-								<textarea name="reasons" id="reasons"></textarea>
-							</div>
-							<button class="submit btn">Deposit Now</button>
-						</div>
+						</form>
 						<div class="forms-item withdrawal">
 							<div class="form-heading">Make a Withdrawal</div>
 							<div>
@@ -204,7 +162,7 @@
 							</div>
 							<div>
 								<label for="reasons">Reason for Withdrawal</label>
-								<textarea name="reasons" id="reasons"></textarea>
+								<textarea class="reasons" name="reasons" id="reasons"></textarea>
 							</div>
 							<button class="submit btn">Withdraw Now</button>
 						</div>
@@ -261,16 +219,13 @@
 							<button class="submit btn">Transfer Now</button>
 						</div>
 						<div class="sucess">
-							<p>
-								Hey there <span class="userName">Eman,</span>The Deposit of
-								<span class="sucessAmount">$700</span> Was sucess<br/>
-								<span class="Verify">Verify your account to see Your balance</span>
-							</p>
-							<span class="close">Close</span>
+							
 						</div>
 					</div>
 				</section>
 			</div>
 		</div>
+		<!---the javascript link.-->
+		<script src="./script.js"></script>
 	</body>
 </html>
