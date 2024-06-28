@@ -1,118 +1,276 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Online Banking App</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Online Banking App</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+		/>
 
-    <link rel="stylesheet" href="./style.css" />
-  </head>
-  <body>
-    <!------ THE HEADER SECTION----------------->
-    <div class="header-container">
-      <div class="header">
-        <div class="logo">
-          <img src="./images/logo.png" alt="" />
-        </div>
-        <div class="notis">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="1.5"
-            stroke="currentColor"
-            class="icon"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
-            />
-          </svg>
-          <span class="notis-num">2</span>
-        </div>
-      </div>
-    </div>
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<!------ THE HEADER SECTION----------------->
+		<div class="header-container">
+			<div class="header">
+				<div class="logo">
+					<img src="./images/logo.png" alt="" />
+				</div>
+				<div class="notis">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
+						/>
+					</svg>
+					<span class="notis-num">2</span>
+				</div>
+			</div>
+		</div>
 
-    <!------ THE main SECTION----------------->
-  <div class="main">
-    <div class="container">
-        <!------ THE greetings SECTION----------------->
-        <section class="section1">
-          <div class="greetings">
-            <h1 class="greeting">
-              <span class="greet">Hi, Good morning</span>
-              <span class="userName">Eman sem</span>
-            </h1>
-          </div>
-        </section>
-  
-        <!------ THE section 2 SECTION----------------->
-  
-        <section class="section2">
-          <div class="icons-wrapper">
-            <div class="icons">
-              <span
-                ><img
-                  width="40"
-                  height="40"
-                  src="https://img.icons8.com/fluency/48/deposit.png"
-                  alt="deposit"
-                />
-              </span>
-              <p class="icon-text">Deposit</p>
+		<!------ THE main SECTION----------------->
+		<div class="main">
+			<div class="container">
+				<!------ THE greetings SECTION----------------->
+				<section class="section1">
+					<div class="greetings">
+						<h1 class="greeting">
+							<span class="greet">Hi, Good morning</span>
+							<span class="userName">Eman </span>
+						</h1>
+					</div>
+				</section>
+
+				<!------ THE section 2 SECTION----------------->
+
+				<section class="section2">
+					<div class="icons-wrapper">
+						<div class="icons">
+							<span
+								><img
+									width="40"
+									height="40"
+									src="https://img.icons8.com/fluency/48/deposit.png"
+									alt="deposit"
+								/>
+							</span>
+							<p class="icon-text">Deposit</p>
+						</div>
+
+						<div class="icons">
+							<span
+								><img
+									width="40"
+									height="40"
+									src="https://img.icons8.com/color-glass/48/withdrawal.png"
+									alt="withdrawal"
+							/></span>
+							<p class="icon-text">Withdraw</p>
+						</div>
+						<div class="icons">
+							<span>
+								<img
+									width="40"
+									height="40"
+									src="https://img.icons8.com/color/48/loan.png"
+									alt="loan"
+								/>
+							</span>
+							<p class="icon-text">Request Loan</p>
+						</div>
+						<div class="icons">
+							<span>
+								<img
+									width="40"
+									height="40"
+									src="https://img.icons8.com/color/48/data-in-both-directions.png"
+									alt="data-in-both-directions"
+								/>
+							</span>
+							<p class="icon-text">Transfer</p>
+						</div>
+					</div>
+
+					<div class="balance-wrapper">
+						<p class="balance-text">Balance:</p>
+						<p class="balance">$70000</p>
+					</div>
+				</section>
+
+				<!------ THE section 3 SECTION----------------->
+				<section class="section3">
+					<div class="transaction">
+						<h2 class="trans-heading">The list of your Transactions</h2>
+						<ul class="transaction-items">
+							<li class="transactions-list">
+								<span id="addedAmount" class="amount-desc"> Deposit</span>
+								<span class="text-desc"
+									>Lorem ipsum dolor sit, amet consectetur
+								</span>
+								<span id="addedBalance" class="amount">3000CFA</span>
+							</li>
+							<li class="transactions-list">
+								<span id="minusText" class="amount-desc"> Withdrawal</span>
+								<span class="text-desc"
+									>Lorem ipsum dolor sit, amet consectetur
+								</span>
+								<span id="minusAmount" class="amount">10000CFA</span>
+							</li>
+							<li class="transactions-list">
+								<span id="addedAmount" class="amount-desc"> Approved Loan</span>
+								<span class="text-desc"
+									>Lorem ipsum dolor sit, amet consectetur
+								</span>
+								<span id="addedBalance" class="amount">3000CFA</span>
+							</li>
+							<li class="transactions-list">
+								<span id="minusText" class="amount-desc"> Transfer</span>
+								<span class="text-desc"
+									>Lorem ipsum dolor sit, amet consectetur
+								</span>
+								<span id="minusAmount" class="amount">13000CFA</span>
+							</li>
+						</ul>
+						<p class="status">No Transactions Found</p>
+            <!------ THE balance   SECTION----------------->
+            <div class="balances">
+              <div class="balance-item">
+                <span class="balance__item--text"> Deposits:</span>
+                <span class="balance__item--amount balance-deposit">$5666</span>
+              </div>
+              <div class="balance-item">
+                <span class="balance__item--text"> Withdrawals:</span>
+                <span class="balance__item--amount balance-withdrawal  ">$4567</span>
+              </div>
+              <div class="balance-item">
+                <span class="balance__item--text"> Loans:</span>
+                <span class="balance__item--amount">$5666</span>
+              </div>
+              <div class="balance-item">
+                <span class="balance__item--text"> Transfers:</span>
+                <span class="balance__item--amount">$5666</span>
+              </div>
             </div>
-  
-            <div class="icons">
-              <span
-                ><img
-                  width="40"
-                  height="40"
-                  src="https://img.icons8.com/color-glass/48/withdrawal.png"
-                  alt="withdrawal"
-              /></span>
-              <p class="icon-text">Withdraw</p>
-            </div>
-            <div class="icons">
-              <span>
-                <img
-                  width="40"
-                  height="40"
-                  src="https://img.icons8.com/color/48/loan.png"
-                  alt="loan"
-                />
-              </span>
-              <p class="icon-text">Request Loan</p>
-            </div>
-            <div class="icons">
-              <span>
-                <img
-                  width="40"
-                  height="40"
-                  src="https://img.icons8.com/color/48/data-in-both-directions.png"
-                  alt="data-in-both-directions"
-                />
-              </span>
-              <p class="icon-text">Transfer</p>
-            </div>
-          </div>
-  
-          <div class="balance-wrapper">
-            <p class="balance-text">Balance:</p>
-            <p class="balance">$70000</p>
-          </div>
-        </section>
-      </div>
-  </div>
-  </body>
+					</div>
+
+					<!------ THE Form  SECTION----------------->
+
+					<div class="form-wrapper">
+						<div class="forms-item deposits">
+							<div class="form-heading">Fill the form to make a deposit</div>
+							<div>
+								<label for="deposit">Enter Deposit Amount</label>
+								<input
+									type="text"
+									class="amount-input"
+									placeholder="Enter amount"
+									required
+								/>
+							</div>
+							<div>
+								<label for="reasons">Reasons for Withdrawal</label>
+								<textarea name="reasons" id="reasons"></textarea>
+							</div>
+							<button class="submit btn">Deposit Now</button>
+						</div>
+						<div class="forms-item withdrawal">
+							<div class="form-heading">Make a Withdrawal</div>
+							<div>
+								<label for="Withdraw">Enter withdraw Amount</label>
+								<input
+									type="text"
+									class="amount-input"
+									placeholder="Enter amount"
+									required
+								/>
+							</div>
+							<div>
+								<label for="reasons">Reason for Withdrawal</label>
+								<textarea name="reasons" id="reasons"></textarea>
+							</div>
+							<button class="submit btn">Withdraw Now</button>
+						</div>
+
+						<div class="forms-item loan">
+							<div class="form-heading">Request for a loan</div>
+							<div>
+								<label for="Loan">Enter Loan Amount</label>
+								<input
+									type="text"
+									class="amount-input"
+									placeholder="Enter amount"
+									required
+								/>
+							</div>
+							<div>
+								<label for="loan">Select the loan Terms</label>
+								<select name="loan" id="loan">
+									<option value="years">1 year</option>
+									<option value="months">6 Months</option>
+								</select>
+							</div>
+							<div>
+								<p class="warn">The interest rate for <span class="loanTerm">1 Year</span> is <span>4%</span></p>
+							</div>
+							<div>
+								<label for="reasons">Why do you need a loan?</label>
+								<textarea name="reasons" id="reasons"></textarea>
+							</div>
+							<button class="submit btn">Confirm</button>
+						</div>
+
+						<div class="forms-item transfer">
+							<div class="form-heading">
+								Fill the form to make your Transfer
+							</div>
+              <div>
+                <label for="name">Enter Receiver Name</label>
+                <input class="name" type="text" placeholder="Enter Receiver Name">
+              </div>
+							<div>
+								<label for="Withdraw">Enter withdraw Amount</label>
+								<input
+									type="text"
+									class="amount-input"
+									placeholder="Enter amount"
+									required
+								/>
+							</div>
+							<div>
+								<label for="reasons">Reasons For the Transfer</label>
+								<textarea name="reasons" id="reasons"></textarea>
+							</div>
+							<button class="submit btn">Transfer Now</button>
+						</div>
+						<div class="sucess">
+							<p>
+								Hey there <span class="userName">Eman,</span>The Deposit of
+								<span class="sucessAmount">$700</span> Was sucess<br/>
+								<span class="Verify">Verify your account to see Your balance</span>
+							</p>
+							<span class="close">Close</span>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</body>
 </html>
