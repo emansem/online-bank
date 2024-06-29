@@ -75,7 +75,7 @@
 							<p class="icon-text">Deposit</p>
 						</div>
 
-						<div class="icons">
+						<div id="withdrawBtn" class="icons">
 							<span
 								><img
 									width="40"
@@ -85,7 +85,7 @@
 							/></span>
 							<p class="icon-text">Withdraw</p>
 						</div>
-						<div class="icons">
+						<div id="openLoanForm"  class="icons">
 							<span>
 								<img
 									width="40"
@@ -130,7 +130,7 @@
 
 					<div class="form-wrapper">
 						<form action="">
-							<div class="forms-item deposits">
+							<div id="depositForm" class="forms-item ">
 								<div class="form-heading">Fill the form to make a deposit</div>
 								<div>
 									<label for="deposit">Enter Deposit Amount</label>
@@ -149,51 +149,57 @@
 								<button class="submit deposit-btn">Deposit Now</button>
 							</div>
 						</form>
-						<div class="forms-item withdrawal">
-							<div class="form-heading">Make a Withdrawal</div>
-							<div>
-								<label for="Withdraw">Enter withdraw Amount</label>
-								<input
-									type="text"
-									class="amount-input"
-									placeholder="Enter amount"
-									required
-								/>
+						<form action="">
+							<div id="withdrawalForm"  class="forms-item ">
+								<div id="warnings"  class="form-heading">Make a Withdrawal</div>
+								<div>
+									<label for="Withdraw">Enter withdraw Amount</label>
+									<input
+										type="text"
+										class="amount-input withdrawInput"
+										placeholder="Enter amount"
+										required
+									/>
+								</div>
+								<div>
+									<label for="reasons">Reason for Withdrawal</label>
+									<textarea class="reasons" name="reasons" id="reasons"></textarea>
+								</div>
+								<button class="submit withdraw-btn">Withdraw Now</button>
 							</div>
-							<div>
-								<label for="reasons">Reason for Withdrawal</label>
-								<textarea class="reasons" name="reasons" id="reasons"></textarea>
-							</div>
-							<button class="submit btn">Withdraw Now</button>
-						</div>
-
-						<div class="forms-item loan">
+	
+						</form>
+					<form action="">
+						<div  id="loanForm" class="forms-item loan">
 							<div class="form-heading">Request for a loan</div>
 							<div>
 								<label for="Loan">Enter Loan Amount</label>
 								<input
+								id="loanInput"
 									type="text"
-									class="amount-input"
+									class="amount-input  "
 									placeholder="Enter amount"
 									required
 								/>
 							</div>
 							<div>
 								<label for="loan">Select the loan Terms</label>
-								<select name="loan" id="loan">
-									<option value="years">1 year</option>
-									<option value="months">6 Months</option>
+								<select name="loan" id="loanTerms"  required>
+									<option value="optional">Select Loan Time</option>
+									<option value="1year">1 year</option>
+									<option value="6months">6 Months</option>
 								</select>
 							</div>
-							<div>
-								<p class="warn">The interest rate for <span class="loanTerm">1 Year</span> is <span>4%</span></p>
+							<div class="warn">
+								
 							</div>
 							<div>
 								<label for="reasons">Why do you need a loan?</label>
-								<textarea name="reasons" id="reasons"></textarea>
+								<textarea name="reasons" id="loanReasons"></textarea>
 							</div>
-							<button class="submit btn">Confirm</button>
+							<button id="loanBtn" class="submit btn">Confirm</button>
 						</div>
+					</form>
 
 						<div class="forms-item transfer">
 							<div class="form-heading">

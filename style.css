@@ -213,12 +213,19 @@ label {
 	display: block;
 }
 
-#minusText {
+.minusText {
 	background: radial-gradient(
 		circle at 81.9% 53.5%,
 		rgb(173, 53, 53) 16.3%,
 		rgb(240, 60, 60) 100.2%
 	);
+  padding: 0.4rem;
+	border-radius: 1.2rem;
+	color: var(--trans);
+	font-weight: 400;
+	font-size: 0.9rem;
+	text-align: center;
+	display: block;
 }
 .amount {
 	background: radial-gradient(
@@ -232,15 +239,17 @@ label {
 	font-weight: 700;
 	font-size: 1rem;
 }
-#minusAmount {
-	background: radial-gradient(
+.minusAmount {
+  background: radial-gradient(
 		circle at 10% 20%,
 		rgb(238, 56, 56) 0%,
 		rgba(206, 21, 0, 0.92) 90.1%
 	);
-
-	color: transparent;
+	padding: 0.4rem;
 	-webkit-background-clip: text;
+	color: transparent;
+	font-weight: 700;
+	font-size: 1rem;
 }
 #addedBalance {
 	color: transparent;
@@ -248,14 +257,17 @@ label {
 	-webkit-background-clip: text;
 }
 
-.withdrawal {
+#withdrawalForm {
 	display: none;
 }
 .loan {
-	display: none;
+	display: none ;
 }
 .transfer {
 	display: none;
+}
+#depositForm {
+	display: ;
 }
 .text-desc {
 	padding-block: 0.4rem;
@@ -283,9 +295,7 @@ label {
 	color: #444;
 	display: none;
 }
-.deposits {
-	display: block;
-}
+
 
 .form-wrapper{
   padding: 1rem;
@@ -420,3 +430,4 @@ textarea {
 	background: var(--gredient2);
 	-webkit-background-clip: text;
 }
+
