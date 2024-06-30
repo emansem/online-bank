@@ -205,33 +205,37 @@
                 </div>
               </form>
 
-              <div class="forms-item transfer">
-                <div class="form-heading">
-                  Fill the form to make your Transfer
-                </div>
-                <div>
-                  <label for="name">Enter Receiver Name</label>
-                  <input
-                    class="name"
-                    type="text"
-                    placeholder="Enter Receiver Name"
-                  />
-                </div>
-                <div>
-                  <label for="Withdraw">Enter withdraw Amount</label>
-                  <input
-                    type="text"
-                    class="amount-input"
-                    placeholder="Enter amount"
-                    required
-                  />
-                </div>
-                <div>
-                  <label for="reasons">Reasons For the Transfer</label>
-                  <textarea name="reasons" id="reasons"></textarea>
-                </div>
-                <button class="submit btn">Transfer Now</button>
-              </div>
+              <form   action="">
+				<div  id="transfer" class="forms-item transfer">
+					<div class="form-heading">
+					  Fill the form to make your Transfer
+					</div>
+					<div>
+					  <label for="name">Enter Receiver Name</label>
+					  <input
+					  id="tranferName"
+						class="name"
+						type="text"
+						placeholder="Enter Receiver Name"
+					  />
+					</div>
+					<div>
+					  <label for="Withdraw">Enter withdraw Amount</label>
+					  <input
+					  id="transferAmt"
+						type="text"
+						class="amount-input"
+						placeholder="Enter amount"
+						required
+					  />
+					</div>
+					<div>
+					  <label for="reasons">Reasons For the Transfer</label>
+					  <textarea  name="reasons" id="transferreasons"></textarea>
+					</div>
+					<button id="transferBtn" class="submit btn">Transfer Now</button>
+				  </div>
+			  </form>
               <div class="sucess"></div>
             </div>
           </section>
@@ -240,12 +244,12 @@
     </div>
 
     <div class="login-wrapper">
-		<h2>Hey there, Welcome Back😊</h2>
+      <h2>Hey there, Welcome Back😊</h2>
       <form action="">
         <div class="loginItem">
           <label class="loginlabel" for="userName">Enter UserName</label>
           <input
-		  id="loginUserName"
+            id="loginUserName"
             class="loginInput"
             type="text"
             placeholder="Enter Your userName"
@@ -253,13 +257,20 @@
         </div>
         <div class="loginItem">
           <label class="loginlabel" for="pin">Enter Your Pin Code</label>
-          <input id="loginPin" class="loginInput"  type="text" placeholder="Enter Pin Code" />
+          <input
+            id="loginPin"
+            class="loginInput"
+            type="text"
+            placeholder="Enter Pin Code"
+          />
         </div>
         <div class="loginBtn">
-          <button   class="loginSubmint">Login In</button>
+          <button class="loginSubmint">Login In</button>
         </div>
       </form>
     </div>
+
+	
     <!---the javascript link.-->
     <script src="./script.js"></script>
   </body>

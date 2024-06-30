@@ -263,11 +263,11 @@ label {
 .loan {
   display: none;
 }
-.transfer {
-  display: none;
+#transfer {
+  display: ;
 }
 #depositForm {
-  display: ;
+  display: none ;
 }
 .text-desc {
   padding-block: 0.4rem;
@@ -441,7 +441,7 @@ textarea {
 }
 .login-wrapper form {
   background: var(--gredient);
-  padding: 5rem  2rem;
+  padding: 5rem 2rem;
   width: 380px;
   border-radius: 1rem;
 }
@@ -460,28 +460,28 @@ textarea {
   font-weight: 500;
   color: #666;
 }
-.loginSubmint{
-	width: 70%;
-	margin-block: 1rem;
-	height: 38px;
-	outline: none;
-	padding: 0.0 0.4rem;
-	font-size: 18px;
-	text-align: center;
-	display: inline-block;
-	cursor: pointer;
-	border: none;
-	border-radius: 1.2rem;
-	font-weight: 500;
-	background: var(--darkgreen);
-	color: var(--trans);
+.loginSubmint {
+  width: 70%;
+  margin-block: 1rem;
+  height: 38px;
+  outline: none;
+  padding: 0 0.4rem;
+  font-size: 18px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  border-radius: 1.2rem;
+  font-weight: 500;
+  background: var(--darkgreen);
+  color: var(--trans);
 }
-.loginBtn{
-	display: flex;
-	justify-content: center;
+.loginBtn {
+  display: flex;
+  justify-content: center;
 }
-.login-wrapper h2{
-	margin-bottom: 2rem;
-	font-size: 30px;
-	color: #555;
+.login-wrapper h2 {
+  margin-bottom: 2rem;
+  font-size: 30px;
+  color: #555;
 }
