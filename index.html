@@ -2,236 +2,265 @@
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Online Banking App</title>
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-			rel="stylesheet"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-		/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Banking App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
-		<link rel="stylesheet" href="./style.css" />
-	</head>
-	<body>
-		<!------ THE HEADER SECTION----------------->
-		<div class="header-container">
-			<div class="header">
-				<div class="logo">
-					<img src="./images/logo.png" alt="" />
-				</div>
-				<div class="notis">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						fill="none"
-						viewBox="0 0 24 24"
-						stroke-width="1.5"
-						stroke="currentColor"
-						class="icon"
-					>
-						<path
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
-						/>
-					</svg>
-					<span class="notis-num">2</span>
-				</div>
-			</div>
-		</div>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="updateUi">
+      <!------ THE HEADER SECTION----------------->
+      <div class="header-container">
+        <div class="header">
+          <div class="logo">
+            <img src="./images/logo.png" alt="" />
+          </div>
+          <div class="notis">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="icon"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0M3.124 7.5A8.969 8.969 0 0 1 5.292 3m13.416 0a8.969 8.969 0 0 1 2.168 4.5"
+              />
+            </svg>
+            <span class="notis-num">2</span>
+          </div>
+        </div>
+      </div>
 
-		<!------ THE main SECTION----------------->
-		<div class="main">
-			<div class="container">
-				<!------ THE greetings SECTION----------------->
-				<section class="section1">
-					<div class="greetings">
-						<h1 class="greeting">
-							<span class="greet">Hi, Good morning</span>
-							<span class="userName">Eman </span>
-						</h1>
-					</div>
-				</section>
-
-				<!------ THE section 2 SECTION----------------->
-
-				<section class="section2">
-					<div class="icons-wrapper">
-						<div class="icons">
-							<span
-								><img
-									width="40"
-									height="40"
-									src="https://img.icons8.com/fluency/48/deposit.png"
-									alt="deposit"
-								/>
-							</span>
-							<p class="icon-text">Deposit</p>
-						</div>
-
-						<div id="withdrawBtn" class="icons">
-							<span
-								><img
-									width="40"
-									height="40"
-									src="https://img.icons8.com/color-glass/48/withdrawal.png"
-									alt="withdrawal"
-							/></span>
-							<p class="icon-text">Withdraw</p>
-						</div>
-						<div id="openLoanForm"  class="icons">
-							<span>
-								<img
-									width="40"
-									height="40"
-									src="https://img.icons8.com/color/48/loan.png"
-									alt="loan"
-								/>
-							</span>
-							<p class="icon-text">Request Loan</p>
-						</div>
-						<div class="icons">
-							<span>
-								<img
-									width="40"
-									height="40"
-									src="https://img.icons8.com/color/48/data-in-both-directions.png"
-									alt="data-in-both-directions"
-								/>
-							</span>
-							<p class="icon-text">Transfer</p>
-						</div>
-					</div>
-
-					<div class="balance-wrapper">
-						<p class="balance-text">Balance:</p>
-						<p class="balance">$0</p>
-					</div>
-				</section>
-
-				<!------ THE section 3 SECTION----------------->
-				<section class="section3">
-					<div class="transaction">
-						<h2 class="trans-heading">The list of your Transactions</h2>
-						<ul class="transaction-items"></ul>
-            <!------ THE balance   SECTION----------------->
-           <div class="balances"> 
-              
+      <!------ THE main SECTION----------------->
+      <div class="main">
+        <div class="container">
+          <!------ THE greetings SECTION----------------->
+          <section class="section1">
+            <div class="greetings">
+              <h1 class="greeting">
+                <span class="greet">Hi, Good morning</span>
+                <span class="userName">Eman </span>
+              </h1>
             </div>
-					</div>
+          </section>
 
-					<!------ THE Form  SECTION----------------->
+          <!------ THE section 2 SECTION----------------->
 
-					<div class="form-wrapper">
-						<form action="">
-							<div id="depositForm" class="forms-item ">
-								<div class="form-heading">Fill the form to make a deposit</div>
-								<div>
-									<label for="deposit">Enter Deposit Amount</label>
-									<input
-									name="deposit-btn"
-										type="text"
-										class="amount-input deposit-input"
-										placeholder="Enter amount"
-										required
-									/>
-								</div>
-								<div>
-									<label for="reasons">Reasons for Deposit</label>
-									<textarea name="reasons" id="reasons"></textarea>
-								</div>
-								<button class="submit deposit-btn">Deposit Now</button>
-							</div>
-						</form>
-						<form action="">
-							<div id="withdrawalForm"  class="forms-item ">
-								<div id="warnings"  class="form-heading">Make a Withdrawal</div>
-								<div>
-									<label for="Withdraw">Enter withdraw Amount</label>
-									<input
-										type="text"
-										class="amount-input withdrawInput"
-										placeholder="Enter amount"
-										required
-									/>
-								</div>
-								<div>
-									<label for="reasons">Reason for Withdrawal</label>
-									<textarea class="reasons" name="reasons" id="reasons"></textarea>
-								</div>
-								<button class="submit withdraw-btn">Withdraw Now</button>
-							</div>
-	
-						</form>
-					<form action="">
-						<div  id="loanForm" class="forms-item loan">
-							<div class="form-heading">Request for a loan</div>
-							<div>
-								<label for="Loan">Enter Loan Amount</label>
-								<input
-								id="loanInput"
-									type="text"
-									class="amount-input  "
-									placeholder="Enter amount"
-									required
-								/>
-							</div>
-							<div>
-								<label for="loan">Select the loan Terms</label>
-								<select name="loan" id="loanTerms"  required>
-									<option value="optional">Select Loan Time</option>
-									<option value="1year">1 year</option>
-									<option value="6months">6 Months</option>
-								</select>
-							</div>
-							<div class="warn">
-								
-							</div>
-							<div>
-								<label for="reasons">Why do you need a loan?</label>
-								<textarea name="reasons" id="loanReasons"></textarea>
-							</div>
-							<button id="loanBtn" class="submit btn">Confirm</button>
-						</div>
-					</form>
-
-						<div class="forms-item transfer">
-							<div class="form-heading">
-								Fill the form to make your Transfer
-							</div>
-              <div>
-                <label for="name">Enter Receiver Name</label>
-                <input class="name" type="text" placeholder="Enter Receiver Name">
+          <section class="section2">
+            <div class="icons-wrapper">
+              <div class="icons">
+                <span
+                  ><img
+                    width="40"
+                    height="40"
+                    src="https://img.icons8.com/fluency/48/deposit.png"
+                    alt="deposit"
+                  />
+                </span>
+                <p class="icon-text">Deposit</p>
               </div>
-							<div>
-								<label for="Withdraw">Enter withdraw Amount</label>
-								<input
-									type="text"
-									class="amount-input"
-									placeholder="Enter amount"
-									required
-								/>
-							</div>
-							<div>
-								<label for="reasons">Reasons For the Transfer</label>
-								<textarea name="reasons" id="reasons"></textarea>
-							</div>
-							<button class="submit btn">Transfer Now</button>
-						</div>
-						<div class="sucess">
-							
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-		<!---the javascript link.-->
-		<script src="./script.js"></script>
-	</body>
+
+              <div id="withdrawBtn" class="icons">
+                <span
+                  ><img
+                    width="40"
+                    height="40"
+                    src="https://img.icons8.com/color-glass/48/withdrawal.png"
+                    alt="withdrawal"
+                /></span>
+                <p class="icon-text">Withdraw</p>
+              </div>
+              <div id="openLoanForm" class="icons">
+                <span>
+                  <img
+                    width="40"
+                    height="40"
+                    src="https://img.icons8.com/color/48/loan.png"
+                    alt="loan"
+                  />
+                </span>
+                <p class="icon-text">Request Loan</p>
+              </div>
+              <div class="icons">
+                <span>
+                  <img
+                    width="40"
+                    height="40"
+                    src="https://img.icons8.com/color/48/data-in-both-directions.png"
+                    alt="data-in-both-directions"
+                  />
+                </span>
+                <p class="icon-text">Transfer</p>
+              </div>
+            </div>
+
+            <div class="balance-wrapper">
+              <p class="balance-text">Balance:</p>
+              <p class="balance">$0</p>
+            </div>
+          </section>
+
+          <!------ THE section 3 SECTION----------------->
+          <section class="section3">
+            <div class="transaction">
+              <h2 class="trans-heading">The list of your Transactions</h2>
+              <ul class="transaction-items"></ul>
+              <!------ THE balance   SECTION----------------->
+              <div class="balances"></div>
+            </div>
+
+            <!------ THE Form  SECTION----------------->
+
+            <div class="form-wrapper">
+              <form action="">
+                <div id="depositForm" class="forms-item">
+                  <div class="form-heading">
+                    Fill the form to make a deposit
+                  </div>
+                  <div>
+                    <label for="deposit">Enter Deposit Amount</label>
+                    <input
+                      name="deposit-btn"
+                      type="text"
+                      class="amount-input deposit-input"
+                      placeholder="Enter amount"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="reasons">Reasons for Deposit</label>
+                    <textarea name="reasons" id="reasons"></textarea>
+                  </div>
+                  <button class="submit deposit-btn">Deposit Now</button>
+                </div>
+              </form>
+              <form action="">
+                <div id="withdrawalForm" class="forms-item">
+                  <div id="warnings" class="form-heading">
+                    Make a Withdrawal
+                  </div>
+                  <div>
+                    <label for="Withdraw">Enter withdraw Amount</label>
+                    <input
+                      type="text"
+                      class="amount-input withdrawInput"
+                      placeholder="Enter amount"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="reasons">Reason for Withdrawal</label>
+                    <textarea
+                      class="reasons"
+                      name="reasons"
+                      id="reasons"
+                    ></textarea>
+                  </div>
+                  <button class="submit withdraw-btn">Withdraw Now</button>
+                </div>
+              </form>
+              <form action="">
+                <div id="loanForm" class="forms-item loan">
+                  <div class="form-heading">Request for a loan</div>
+                  <div>
+                    <label for="Loan">Enter Loan Amount</label>
+                    <input
+                      id="loanInput"
+                      type="text"
+                      class="amount-input"
+                      placeholder="Enter amount"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label for="loan">Select the loan Terms</label>
+                    <select name="loan" id="loanTerms" required>
+                      <option value="optional">Select Loan Time</option>
+                      <option value="1year">1 year</option>
+                      <option value="6months">6 Months</option>
+                    </select>
+                  </div>
+                  <div class="warn"></div>
+                  <div>
+                    <label for="reasons">Why do you need a loan?</label>
+                    <textarea name="reasons" id="loanReasons"></textarea>
+                  </div>
+                  <button id="loanBtn" class="submit btn">Confirm</button>
+                </div>
+              </form>
+
+              <div class="forms-item transfer">
+                <div class="form-heading">
+                  Fill the form to make your Transfer
+                </div>
+                <div>
+                  <label for="name">Enter Receiver Name</label>
+                  <input
+                    class="name"
+                    type="text"
+                    placeholder="Enter Receiver Name"
+                  />
+                </div>
+                <div>
+                  <label for="Withdraw">Enter withdraw Amount</label>
+                  <input
+                    type="text"
+                    class="amount-input"
+                    placeholder="Enter amount"
+                    required
+                  />
+                </div>
+                <div>
+                  <label for="reasons">Reasons For the Transfer</label>
+                  <textarea name="reasons" id="reasons"></textarea>
+                </div>
+                <button class="submit btn">Transfer Now</button>
+              </div>
+              <div class="sucess"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="login-wrapper">
+		<h2>Hey there, Welcome Back😊</h2>
+      <form action="">
+        <div class="loginItem">
+          <label class="loginlabel" for="userName">Enter UserName</label>
+          <input
+		  id="loginUserName"
+            class="loginInput"
+            type="text"
+            placeholder="Enter Your userName"
+          />
+        </div>
+        <div class="loginItem">
+          <label class="loginlabel" for="pin">Enter Your Pin Code</label>
+          <input id="loginPin" class="loginInput"  type="text" placeholder="Enter Pin Code" />
+        </div>
+        <div class="loginBtn">
+          <button   class="loginSubmint">Login In</button>
+        </div>
+      </form>
+    </div>
+    <!---the javascript link.-->
+    <script src="./script.js"></script>
+  </body>
 </html>

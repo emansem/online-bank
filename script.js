@@ -1,94 +1,162 @@
-const transactionLists = [
+// const transactionLists = [
+//   {
+//     types: {
+//       reason: "",
+//       withdraw: 0,
+//       deposit: 0,
+//       loan: 0,
+//       transfer: 0,
+//     },
+//   },
+// ];
+
+//VARAIBLES FOR THE FORM.
+const updateUi = document.querySelector(".updateUi");
+const formWrapper = document.querySelector(".login-wrapper");
+const loginUserName = document.getElementById("loginUserName");
+
+const loginSubmint = document.querySelector(".loginSubmint");
+
+const users = [
   {
-    types: {
-      reason: "",
-      withdraw: 0,
-      deposit: 0,
-      loan: 0,
-      transfer: 0,
-    },
+    userName: "user1",
+    fullName: "Bung sem cedrick",
+    pin: 1234,
+
+    transactions: [
+      {
+        reason: "",
+        withdraw: 0,
+        deposit: 0,
+        loan: 0,
+        transfer: 0,
+      },
+    ],
+  },
+  {
+    userName: "user2",
+    pin: 5678,
+    fullName: "Eman Sem",
+    transactions: [
+      {
+        reason: "",
+        withdraw: 0,
+        deposit: 0,
+        loan: 0,
+        transfer: 0,
+      },
+    ],
   },
 ];
 
-function addTransaction(reason, withdraw, deposit, loan, transfer) {
-  transactionLists.push({
-    types: {
+console.log(users);
+
+function addTransaction(userName, reason, withdraw, deposit, loan, transfer) {
+  const user = users.find((user) => user.userName === userName);
+  if (user) {
+    user.transactions.push({
       reason: reason,
       withdraw: withdraw,
       deposit: deposit,
       loan: loan,
       transfer: transfer,
-    },
-  });
+    });
+  }
 }
-addTransaction("Shopping", 60, 50, 0, 0);
-console.log(transactionLists);
 
-function transactionHistory() {
+addTransaction("user1", "Salary", 100, 1000, 100, 566);
+addTransaction("user2", "Groceries", 100, 999, 900, 122);
+
+//login the users if the username is correct.
+
+loginSubmint.addEventListener("click", userLogin);
+//Displaying the recents and transaction history.
+
+function transactionHistory(userName) {
   let displayText = "";
+  const user = users.find((user) => user.userName === userName);
 
-  transactionLists.forEach(function (item) {
-    let withdrawText = item.types.withdraw;
-    let depositText = item.types.deposit;
-    let loanText = item.types.loan;
-    let transferText = item.types.transfer;
-    let reasonText = item.types.reason;
+  if (user) {
+    user.transactions.forEach(function (transaction) {
+      let withdrawText = transaction.withdraw;
+      let depositText = transaction.deposit;
+      let loanText = transaction.loan;
+      let transferText = transaction.transfer;
+      let reasonText = transaction.reason;
 
-    if (withdrawText > 0) {
-      displayText += `<li class="transactions-list">
+      if (withdrawText > 0) {
+        displayText += `<li class="transactions-list">
           <span class="minusText">Withdraw</span>
           <span class="text-desc">${reasonText}</span>
-          <span  class="amount">$${withdrawText}</span>
+          <span class="amount">$${withdrawText}</span>
         </li>`;
-    }
+      }
 
-    if (depositText > 0) {
-      displayText += `<li class="transactions-list">
+      if (depositText > 0) {
+        displayText += `<li class="transactions-list">
           <span class="amount-desc">Deposit</span>
           <span class="text-desc">${reasonText}</span>
           <span id="addedBalance" class="amount">$${depositText}</span>
         </li>`;
-    }
+      }
 
-    if (loanText > 0) {
-      displayText += `<li class="transactions-list">
+      if (loanText > 0) {
+        displayText += `<li class="transactions-list">
           <span class="minusText">Approve Loan</span>
           <span class="text-desc">${reasonText}</span>
-          <span  class="amount">$${loanText}</span>
+          <span class="amount">$${loanText}</span>
         </li>`;
-    }
+      }
 
-    if (transferText > 0) {
-      displayText += `<li class="transactions-list">
+      if (transferText > 0) {
+        displayText += `<li class="transactions-list">
           <span class="amount-desc">Transfer</span>
           <span class="text-desc">${reasonText}</span>
-          <span  class="amount">$${transferText}</span>
+          <span class="amount">$${transferText}</span>
         </li>`;
-    }
-  });
-  const displayItems = document.querySelector(".transaction-items");
-  return (displayItems.innerHTML = displayText);
+      }
+    });
+  }
+
+  let displayItems = document.querySelector(".transaction-items");
+  displayItems.innerHTML = displayText;
+  return displayText;
 }
 
-transactionHistory();
+// Call the function with a specific userName
+let loggedInUserName = '';
+function userLogin(e) {
+  e.preventDefault();
+  const loginInputValue = loginUserName.value;
+  
+  const loginPin = document.getElementById("loginPin").value;
+  let pinValue = Number(loginPin);
+  const user = users.find(
+    (user) => user.userName === loginInputValue && user.pin === pinValue
+  );
+  if (user) {
+    loggedInUserName = user.userName;
+    transactionHistory(loggedInUserName);
+    console.log(loggedInUserName)
+    updateUi.style.display = "block";
+    formWrapper.style.display = "none";
+  }
+}
 
+
+//The Total Balance
 const displayTotalBalance = document.querySelector(".balance");
+let amt = 8000;
 let totalBalance = 8000;
 displayTotalBalance.innerHTML = totalBalance;
 
-const loanTerms = [
-  {
-    types: "1year, 6months",
-  },
-];
-
+//Total balance for each modules
 let depositBalance = 0;
 let loanBalance = 0;
 let withdrawaBalance = 0;
 let transferBalance = 0;
 
-//final balances
-
+//Function for the total balance for each Module.
 function balances() {
   let displayBalances = "";
 
@@ -117,78 +185,67 @@ function balances() {
 }
 balances();
 
-// Function to update the transaction history
-
-// the depoist event handeler
-
+//The Selectors and decleration of variables use in the codes.
 const sucessMessage = document.querySelector(".sucess");
 const depositForm = document.getElementById("depositForm");
 const withdrawalForm = document.getElementById("withdrawalForm");
 const depositBtn = document.querySelector(".deposit-btn");
 const openWithdraw = document.getElementById("withdrawBtn");
+const withdrawBtn = document.querySelector(".withdraw-btn");
+const transactionReason = document.querySelector(".reasons");
+const loanForm = document.getElementById("loanForm");
+const loanBtn = document.getElementById("loanBtn");
+let warn = document.querySelector(".warn");
+let loanTime = document.getElementById("loanTerms");
 
-// Events to open forms
 
-//Event to make  deposit.
 
-depositBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+function createAnewDeposit() {
   const depositInput = document.querySelector(".deposit-input");
   let transactionReason = document.getElementById("reasons").value;
   let depositInputValue = Number(depositInput.value);
-  if (
-    isNaN(depositInputValue) ||
-    depositInputValue === "" ||
-    transactionReason === ""
-  ) {
+  
+  if (isNaN(depositInputValue) || depositInputValue === "" || transactionReason === "") {
     alert("Please fill the form correctly");
   } else {
-    // Add transaction to the list
-    addTransaction(transactionReason, 0, depositInputValue, 0, 0);
+    // Ensure user is defined and accessible
+    if (loggedInUserName) {
+      addTransaction(loggedInUserName, transactionReason, 0, depositInputValue, 0, 0);
+      transactionHistory(loggedInUserName); // Update UI with transaction history for the user
+      // Update balances and display messages as needed
     depositBalance += depositInputValue;
-
     totalBalance += depositInputValue;
     displayTotalBalance.innerHTML = `$${totalBalance}`;
-    transactionHistory();
-    balances();
+    console.log(loggedInUserName)
+
+    balances(); // Assuming this function updates other UI elements related to balances
+
+    // Display success message or perform other UI updates
     depositForm.style.display = "none";
     sucessMessage.style.display = "block";
-    displayMessage();
+    let customMessage = `Your deposit has been approved. Thanks for trusting us`;
+    displayMessage(depositInputValue, customMessage);
+
+    // Reset input fields
     transactionReason = "";
     depositInput.value = "";
+    } else{
+      alert("Please login to continue");
+    }
+
+    
   }
-});
-
-//create the sucess message;
-let sucessDisplay = "";
-function displayMessage() {
-  const depositInput = document.querySelector(".deposit-input");
-
-  let depositInputValue = Number(depositInput.value);
-
-  sucessDisplay += `<p>
-                                  Congratulations, <span class="userName">Eman,</span> Transaction is complete
-                                  <span class="sucessAmount">$${depositInputValue}</span> <br/>
-                                  <span class="Verify">Verify your account to see Your balance</span>
-                              </p>
-                              <span class="close">Close</span>`;
-
-  sucessMessage.innerHTML = sucessDisplay;
-  const close = document.querySelector(".close");
-
-  close.addEventListener("click", function (e) {
-    e.preventDefault();
-
-    depositForm.style.display = "block";
-    sucessMessage.style.display = "none";
-  });
 }
 
-const withdrawBtn = document.querySelector(".withdraw-btn");
-const transactionReason = document.querySelector(".reasons");
+// Test addTransaction and transactionHistory functions separately
+addTransaction("user1", "Test Deposit", 0, 500, 0, 0);
+transactionHistory("user1");
 
-withdrawBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+
+//Create a new withdrawal function.
+
+function requestWithdrawal(event) {
+  event.preventDefault();
 
   const withdrawInput = document.querySelector(".withdrawInput");
   const formItem = document.querySelector(".forms-item");
@@ -208,8 +265,11 @@ withdrawBtn.addEventListener("click", function (e) {
   } else if (withdrawInputValue > totalBalance) {
     warnings.textContent = "Sorry, you have insufficient Balance";
   } else {
-    // Add transaction to the list
-    addTransaction(reasonsValue, withdrawInputValue, 0, 0, 0);
+    if(loggedInUserName){
+      // Update database with withdrawal transaction
+      // Add transaction to the list
+      addTransaction(loggedInUserName, reasonsValue, withdrawInputValue, 0, 0, 0);
+      transactionHistory(loggedInUserName); 
     // Update the total balance
     totalBalance -= withdrawInputValue;
     displayTotalBalance.innerHTML = `$${totalBalance}`;
@@ -218,8 +278,7 @@ withdrawBtn.addEventListener("click", function (e) {
     // Call additional functions
     balances();
     // Assuming transactionHistory() generates and displays transaction history
-    transactionHistory();
-
+   
     sucessMessage.style.display = "block";
 
     if (withdrawalForm) {
@@ -228,29 +287,18 @@ withdrawBtn.addEventListener("click", function (e) {
       formItem.style.display = "none";
     }
 
-    displayMessage();
+    let customMessage = `Your withdrawal has been approved. Thanks for trusting us`;
+    displayMessage(withdrawInputValue, customMessage);
+    withdrawInput.value = "";
+    transactionReason.value = "";
   }
-});
-const loanForm = document.getElementById("loanForm");
-// the loan handerler.
-let warn = document.querySelector(".warn");
-let loanTime = document.getElementById("loanTerms");
-let yearIntrest = 4;
-let monthsInterest = 2;
-loanTime.addEventListener("input", function (e) {
-  if (loanTime.value === "6months") {
-    warn.style.display = "block";
-    warn.innerHTML = `<p>The interest rate for <span class="loanTerm">${loanTime.value}</span> is <span>${monthsInterest}%</span></p>`;
-  } else if (loanTime.value === "1year") {
-    warn.style.display = "block";
-    warn.innerHTML = `<p>The interest rate for <span class="loanTerm">${loanTime.value}</span> is <span>${yearIntrest}%</span></p>`;
-  }
-});
+    }
+}
 
-const loanBtn = document.getElementById("loanBtn");
+//This function is to request for a loan.
 
-loanBtn.addEventListener("click", function (e) {
-  e.preventDefault();
+function requestLoan(event) {
+  event.preventDefault();
   let loanInput = document.getElementById("loanInput");
   let loanReasons = document.getElementById("loanReasons");
   let loanReasonValue = loanReasons.value;
@@ -269,53 +317,95 @@ loanBtn.addEventListener("click", function (e) {
   ) {
     alert("Please fill all the fields");
   } else {
-    if (selectedOption === "1year") {
-      result = parseFloat((yearInterest * loanInputValue) / 12);
-    } else if (selectedOption === "6months") {
-      result = parseFloat((monthsInterest * loanInputValue) / 12);
+
+    if(loggedInUserName){
+      if (selectedOption === "1year") {
+        result = parseFloat((yearInterest * loanInputValue) / 12);
+      } else if (selectedOption === "6months") {
+        result = parseFloat((monthsInterest * loanInputValue) / 12);
+      }
+  
+      loanBalance += Math.round(result + loanInputValue);
+  
+      balances();
+      //Add a new loan request to the Array.
+      addTransaction(loggedInUserName, loanReasonValue, 0, 0, loanInputValue, 0);
+      // Add transaction to the list
+      transactionHistory(loggedInUserName); 
+      totalBalance += loanInputValue;
+      displayTotalBalance.innerHTML = `$${totalBalance}`;
+      sucessMessage.style.display = "block";
+  
+      loanForm.style.display = "none";
+      loanInput.value = "";
+      loanReasons.value = "";
+      warn.style.display = "none";
+      let customMessage = `Your loan has Approved, Thanks for Trusting Us`;
+      displayMessage(loanInputValue, customMessage);
     }
-
-    loanBalance += Math.round(result + loanInputValue); 
-    console.log(loanBalance);e
-    balances(); 
-    addTransaction(loanReasonValue, 0, 0, loanInputValue, 0);
-    transactionHistory();
-    sucessMessage.style.display = "block";
-
     
-    loanForm.style.display = "none";
-    loanInput.value = "";
-    loanReasons.value = "";
-    warn.style.display = "none";
-    sucessDisplay += `<p>
-    Congratulations, <span class="userName">Eman,</span> Your Loan have been approved.
-    <span class="sucessAmount">$${loanInputValue}</span> <br/>
-    <span class="Verify">Verify your account to see Your balance</span>
-</p>
-<span class="close">Close</span>`;
-sucessMessage.innerHTML = sucessDisplay;
-const close = document.querySelector(".close");
+  }
+}
 
-close.addEventListener("click", function (e) {
+//Event to make  deposit, withdraw, transfer, and request for a loan.
+
+depositBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+
+  createAnewDeposit();
+});
+withdrawBtn.addEventListener("click", requestWithdrawal);
+loanBtn.addEventListener("click", requestLoan);
+
+//create the sucess message;
+let sucessDisplay = "";
+function displayMessage(amount, customMessage) {
+  sucessDisplay += `<p>
+                                  Congratulations, <span class="userName">Eman,</span> ${customMessage}.
+                                  <span class="sucessAmount"> Amount: $${amount}</span> <br/>
+                                  <span class="Verify">Verify your account to see Your balance</span>
+                              </p>
+                              <span class="close">Close</span>`;
+
+  sucessMessage.innerHTML = sucessDisplay;
+  const close = document.querySelector(".close");
+
+  close.addEventListener("click", function (e) {
     e.preventDefault();
 
     depositForm.style.display = "block";
     sucessMessage.style.display = "none";
   });
+}
 
+// the loan handerler.
+
+// This module check the loan duration and update the UI
+
+let yearIntrest = 4;
+let monthsInterest = 2;
+loanTime.addEventListener("input", function (e) {
+  if (loanTime.value === "6months") {
+    warn.style.display = "block";
+    warn.innerHTML = `<p>The interest rate for <span class="loanTerm">${loanTime.value}</span> is <span>${monthsInterest}%</span></p>`;
+  } else if (loanTime.value === "1year") {
+    warn.style.display = "block";
+    warn.innerHTML = `<p>The interest rate for <span class="loanTerm">${loanTime.value}</span> is <span>${yearIntrest}%</span></p>`;
   }
 });
 
-const openLoanForm = document.getElementById('openLoanForm');
-openLoanForm.addEventListener( 'click', function(e){
-    e.preventDefault();
-    depositForm.style.display = "none";
-    loanForm.style.display = "block";
-    withdrawalForm.style.display = "none";
-})
+// THIS EVENTS OPEN THE FORMS AND UPDATES THE UI
+
+const openLoanForm = document.getElementById("openLoanForm");
+openLoanForm.addEventListener("click", function (e) {
+  e.preventDefault();
+  depositForm.style.display = "none";
+  loanForm.style.display = "block";
+  withdrawalForm.style.display = "none";
+});
+
 openWithdraw.addEventListener("click", function (e) {
-    withdrawalForm.style.display = "block";
-    depositForm.style.display = "none";
-    loanForm.style.display = "none";
-  });
-  
+  withdrawalForm.style.display = "block";
+  depositForm.style.display = "none";
+  loanForm.style.display = "none";
+});
